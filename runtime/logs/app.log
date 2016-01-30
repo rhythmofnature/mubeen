@@ -1,0 +1,1570 @@
+2015-09-05 07:39:42 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:39:42 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/edu/install.php?r=installation%2Fdb-config'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '35989'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438782.905
+    'REQUEST_TIME' => 1441438782
+]
+2015-09-05 07:39:48 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:39:48 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '35990'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438788.781
+    'REQUEST_TIME' => 1441438788
+]
+2015-09-05 07:39:50 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:39:50 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '35990'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438790.759
+    'REQUEST_TIME' => 1441438790
+]
+2015-09-05 07:39:54 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:39:54 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '35990'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438794.632
+    'REQUEST_TIME' => 1441438794
+]
+2015-09-05 07:40:37 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:40:37 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/edu/index.php'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '35998'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438837.364
+    'REQUEST_TIME' => 1441438837
+]
+2015-09-05 07:40:38 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:40:38 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/edu/index.php'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '35998'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438838.645
+    'REQUEST_TIME' => 1441438838
+]
+2015-09-05 07:41:01 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', 'redhat', NULL)
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#12 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#13 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#14 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#16 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#18 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#20 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#23 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#25 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#26 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#12 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#13 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#16 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#18 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#20 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#23 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-09-05 07:41:01 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36003'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438861.114
+    'REQUEST_TIME' => 1441438861
+]
+2015-09-05 07:41:03 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', 'redhat', NULL)
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#12 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#13 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#14 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#16 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#18 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#20 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#23 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#25 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#26 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#12 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#13 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#16 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#18 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#20 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#23 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-09-05 07:41:03 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36003'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438863.013
+    'REQUEST_TIME' => 1441438863
+]
+2015-09-05 07:41:15 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', 'redhat', NULL)
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#12 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#13 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#14 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#16 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#18 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#20 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#23 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#25 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#26 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#12 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#13 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#16 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#18 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#20 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#23 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-09-05 07:41:15 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36007'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438875.177
+    'REQUEST_TIME' => 1441438875
+]
+2015-09-05 07:42:27 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', 'redhat', NULL)
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#12 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#13 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#14 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#16 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#18 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#20 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#23 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#25 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#26 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#12 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#13 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#16 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#18 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#20 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#23 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-09-05 07:42:27 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36020'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438947.649
+    'REQUEST_TIME' => 1441438947
+]
+2015-09-05 07:43:17 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', 'redhat', NULL)
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#12 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#13 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#14 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#16 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#18 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#20 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#23 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#25 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#26 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#12 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#13 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#16 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#18 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#20 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#23 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-09-05 07:43:17 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36033'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441438997.684
+    'REQUEST_TIME' => 1441438997
+]
+2015-09-05 07:43:47 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', 'redhat', NULL)
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#12 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#13 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#14 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#16 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#18 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#20 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#23 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#25 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#26 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000] [1049] Unknown database 'edusac'' in /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(208): yii\db\Connection->getSlavePdo()
+#3 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(816): yii\db\Command->prepare(true)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(198): yii\db\Command->queryAll()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/db/mysql/Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /var/www/html/edu/vendor/yiisoft/yii2/db/Schema.php(126): yii\db\mysql\Schema->loadTableSchema('users')
+#8 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(294): yii\db\Schema->getTableSchema('users')
+#9 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#10 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#11 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#12 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#13 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#15 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#16 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#17 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#18 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#19 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#20 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#21 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#22 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#23 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#24 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-09-05 07:43:47 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36142'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441439027.666
+    'REQUEST_TIME' => 1441439027
+]
+2015-09-05 07:47:11 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:47:11 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/edu/install.php?r=installation%2Fdb-config'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36179'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441439231.57
+    'REQUEST_TIME' => 1441439231
+]
+2015-09-05 07:49:55 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The table does not exist: users' in /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php:298
+Stack trace:
+#0 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(317): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/edu/vendor/yiisoft/yii2/db/ActiveRecord.php(176): yii\db\ActiveRecord::primaryKey()
+#2 /var/www/html/edu/vendor/yiisoft/yii2/db/BaseActiveRecord.php(101): yii\db\ActiveRecord::findByCondition(2)
+#3 /var/www/html/edu/models/User.php(162): yii\db\BaseActiveRecord::findOne(2)
+#4 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(614): app\models\User::findIdentity(2)
+#5 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(176): yii\web\User->renewAuthStatus()
+#6 /var/www/html/edu/vendor/yiisoft/yii2/web/User.php(346): yii\web\User->getIdentity()
+#7 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(111): yii\web\User->getIsGuest()
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(67): mdm\admin\components\AccessControl->isActive(Object(yii\base\InlineAction))
+#9 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#10 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#11 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#12 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#13 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('', Array)
+#15 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#17 {main}
+2015-09-05 07:49:55 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'PHPSESSID' => 'g3h8jl6sbk28g9ibvlpf71v637'
+    '_csrf' => '66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6o0bErGXBxPyXmssXZNMzZrNY5I0mwFi\";}'
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/packs/frontend/web/hr/designations'
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/edu/install.php?r=installation%2Fdb-config'
+    'HTTP_COOKIE' => 'PHPSESSID=g3h8jl6sbk28g9ibvlpf71v637; _csrf=66a4ef79aa588a9c4acb3f56e9cd26ea610af92490c91e112a36b5e758f5ecf3a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226o0bErGXBxPyXmssXZNMzZrNY5I0mwFi%22%3B%7D; _identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '36203'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/edu/index.php'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1441439395.471
+    'REQUEST_TIME' => 1441439395
+]
+2015-09-27 10:43:24 [127.0.0.1][2][-][error][yii\web\HttpException:403] exception 'yii\web\ForbiddenHttpException' with message 'You are not allowed to perform this action.' in /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php:96
+Stack trace:
+#0 /var/www/html/edu/vendor/mdmsoft/yii2-admin/components/AccessControl.php(81): mdm\admin\components\AccessControl->denyAccess(Object(yii\web\User))
+#1 /var/www/html/edu/vendor/yiisoft/yii2/base/ActionFilter.php(71): mdm\admin\components\AccessControl->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /var/www/html/edu/vendor/yiisoft/yii2/base/Component.php(538): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(602): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /var/www/html/edu/vendor/yiisoft/yii2/base/Controller.php(139): yii\base\Module->beforeAction(Object(yii\base\InlineAction))
+#6 /var/www/html/edu/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#7 /var/www/html/edu/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('dashboard/msg-o...', Array)
+#8 /var/www/html/edu/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 /var/www/html/edu/index.php(48): yii\base\Application->run()
+#10 {main}
+2015-09-27 10:43:24 [127.0.0.1][2][-][info][application] $_GET = [
+    'r' => 'dashboard/msg-of-day'
+]
+
+$_COOKIE = [
+    '_identity' => '8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[2,\"ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S\",2592000]\";}'
+    'PHPSESSID' => '9a47moqjll26s6mvrsqpaujhe7'
+    '_csrf' => '0332f8707468362a5e15f8c016421e7258590724d03160fa4ed49a3da7e58068a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"R9GWa0wZBYZoy63xaPtrOpLCqOYIjdu3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'admin_user' => 1
+    'exportData' => yii\data\ActiveDataProvider#1
+    (
+        [query] => yii\db\ActiveQuery#2
+        (
+            [sql] => null
+            [on] => null
+            [joinWith] => null
+            [select] => null
+            [selectOption] => null
+            [distinct] => null
+            [from] => null
+            [groupBy] => null
+            [join] => null
+            [having] => null
+            [union] => null
+            [params] => []
+            [yii\base\Component:_events] => []
+            [yii\base\Component:_behaviors] => []
+            [where] => 'is_status <> 2'
+            [limit] => null
+            [offset] => null
+            [orderBy] => null
+            [indexBy] => null
+            [modelClass] => 'app\\modules\\dashboard\\models\\MsgOfDay'
+            [with] => null
+            [asArray] => null
+            [multiple] => null
+            [primaryModel] => null
+            [link] => null
+            [via] => null
+            [inverseOf] => null
+        )
+        [key] => null
+        [db] => null
+        [id] => null
+        [yii\data\BaseDataProvider:_sort] => yii\data\Sort#3
+        (
+            [enableMultiSort] => false
+            [attributes] => [
+                'msg_of_day_id' => [
+                    'asc' => [
+                        'msg_of_day_id' => 4
+                    ]
+                    'desc' => [
+                        'msg_of_day_id' => 3
+                    ]
+                    'label' => 'Msg Of Day ID'
+                ]
+                'msg_details' => [
+                    'asc' => [
+                        'msg_details' => 4
+                    ]
+                    'desc' => [
+                        'msg_details' => 3
+                    ]
+                    'label' => 'Details'
+                ]
+                'msg_user_type' => [
+                    'asc' => [
+                        'msg_user_type' => 4
+                    ]
+                    'desc' => [
+                        'msg_user_type' => 3
+                    ]
+                    'label' => 'User Type'
+                ]
+                'created_at' => [
+                    'asc' => [
+                        'created_at' => 4
+                    ]
+                    'desc' => [
+                        'created_at' => 3
+                    ]
+                    'label' => 'Created At'
+                ]
+                'created_by' => [
+                    'asc' => [
+                        'created_by' => 4
+                    ]
+                    'desc' => [
+                        'created_by' => 3
+                    ]
+                    'label' => 'Created By'
+                ]
+                'updated_at' => [
+                    'asc' => [
+                        'updated_at' => 4
+                    ]
+                    'desc' => [
+                        'updated_at' => 3
+                    ]
+                    'label' => 'Updated At'
+                ]
+                'updated_by' => [
+                    'asc' => [
+                        'updated_by' => 4
+                    ]
+                    'desc' => [
+                        'updated_by' => 3
+                    ]
+                    'label' => 'Updated By'
+                ]
+                'is_status' => [
+                    'asc' => [
+                        'is_status' => 4
+                    ]
+                    'desc' => [
+                        'is_status' => 3
+                    ]
+                    'label' => 'Status'
+                ]
+            ]
+            [sortParam] => 'sort'
+            [defaultOrder] => [
+                'msg_of_day_id' => 3
+            ]
+            [route] => null
+            [separator] => ','
+            [params] => null
+            [urlManager] => null
+            [yii\data\Sort:_attributeOrders] => [
+                'msg_of_day_id' => 3
+            ]
+        )
+        [yii\data\BaseDataProvider:_pagination] => yii\data\Pagination#4
+        (
+            [pageParam] => 'page'
+            [pageSizeParam] => 'per-page'
+            [forcePageParam] => true
+            [route] => null
+            [params] => null
+            [urlManager] => null
+            [validatePage] => true
+            [totalCount] => 6
+            [defaultPageSize] => 20
+            [pageSizeLimit] => [
+                0 => 1
+                1 => 50
+            ]
+            [yii\data\Pagination:_pageSize] => 20
+            [yii\data\Pagination:_page] => 0
+        )
+        [yii\data\BaseDataProvider:_keys] => [
+            0 => 6
+            1 => 5
+            2 => 4
+            3 => 3
+            4 => 2
+            5 => 1
+        ]
+        [yii\data\BaseDataProvider:_models] => [
+            0 => app\modules\dashboard\models\MsgOfDay#5
+            (
+                [yii\db\BaseActiveRecord:_attributes] => [
+                    'msg_of_day_id' => 6
+                    'msg_details' => 'In life, as in football, you won\'t go far unless you know where the goalposts are.
+-- Arnold Glasow'
+                    'msg_user_type' => 'S'
+                    'created_at' => '2015-05-27 15:24:54'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_oldAttributes] => [
+                    'msg_of_day_id' => 6
+                    'msg_details' => 'In life, as in football, you won\'t go far unless you know where the goalposts are.
+-- Arnold Glasow'
+                    'msg_user_type' => 'S'
+                    'created_at' => '2015-05-27 15:24:54'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_related] => []
+                [yii\base\Model:_errors] => null
+                [yii\base\Model:_validators] => null
+                [yii\base\Model:_scenario] => 'default'
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => []
+            )
+            1 => app\modules\dashboard\models\MsgOfDay#6
+            (
+                [yii\db\BaseActiveRecord:_attributes] => [
+                    'msg_of_day_id' => 5
+                    'msg_details' => 'The Best for the Group comes when everyone in the group does what’s best for himself AND the group.'
+                    'msg_user_type' => 'E'
+                    'created_at' => '2015-05-27 15:22:20'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_oldAttributes] => [
+                    'msg_of_day_id' => 5
+                    'msg_details' => 'The Best for the Group comes when everyone in the group does what’s best for himself AND the group.'
+                    'msg_user_type' => 'E'
+                    'created_at' => '2015-05-27 15:22:20'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_related] => []
+                [yii\base\Model:_errors] => null
+                [yii\base\Model:_validators] => null
+                [yii\base\Model:_scenario] => 'default'
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => []
+            )
+            2 => app\modules\dashboard\models\MsgOfDay#7
+            (
+                [yii\db\BaseActiveRecord:_attributes] => [
+                    'msg_of_day_id' => 4
+                    'msg_details' => 'Smile is the Electricity and Life is a Battery whenever you Smile the Battery gets Charges.'
+                    'msg_user_type' => '0'
+                    'created_at' => '2015-05-27 15:21:59'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_oldAttributes] => [
+                    'msg_of_day_id' => 4
+                    'msg_details' => 'Smile is the Electricity and Life is a Battery whenever you Smile the Battery gets Charges.'
+                    'msg_user_type' => '0'
+                    'created_at' => '2015-05-27 15:21:59'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_related] => []
+                [yii\base\Model:_errors] => null
+                [yii\base\Model:_validators] => null
+                [yii\base\Model:_scenario] => 'default'
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => []
+            )
+            3 => app\modules\dashboard\models\MsgOfDay#8
+            (
+                [yii\db\BaseActiveRecord:_attributes] => [
+                    'msg_of_day_id' => 3
+                    'msg_details' => 'Every ONE wants happiness, No ONE needs pain, But its not possible to get a rainbow.'
+                    'msg_user_type' => 'E'
+                    'created_at' => '2015-05-27 15:21:41'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_oldAttributes] => [
+                    'msg_of_day_id' => 3
+                    'msg_details' => 'Every ONE wants happiness, No ONE needs pain, But its not possible to get a rainbow.'
+                    'msg_user_type' => 'E'
+                    'created_at' => '2015-05-27 15:21:41'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_related] => []
+                [yii\base\Model:_errors] => null
+                [yii\base\Model:_validators] => null
+                [yii\base\Model:_scenario] => 'default'
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => []
+            )
+            4 => app\modules\dashboard\models\MsgOfDay#9
+            (
+                [yii\db\BaseActiveRecord:_attributes] => [
+                    'msg_of_day_id' => 2
+                    'msg_details' => 'Every day may not be GOOD but there is something GOOD in every day.'
+                    'msg_user_type' => 'S'
+                    'created_at' => '2015-05-27 15:21:22'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_oldAttributes] => [
+                    'msg_of_day_id' => 2
+                    'msg_details' => 'Every day may not be GOOD but there is something GOOD in every day.'
+                    'msg_user_type' => 'S'
+                    'created_at' => '2015-05-27 15:21:22'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 1
+                ]
+                [yii\db\BaseActiveRecord:_related] => []
+                [yii\base\Model:_errors] => null
+                [yii\base\Model:_validators] => null
+                [yii\base\Model:_scenario] => 'default'
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => []
+            )
+            5 => app\modules\dashboard\models\MsgOfDay#10
+            (
+                [yii\db\BaseActiveRecord:_attributes] => [
+                    'msg_of_day_id' => 1
+                    'msg_details' => 'Each Day is a GIFT don\'t send it BACK unopened.  Have a nice Day !'
+                    'msg_user_type' => '0'
+                    'created_at' => '2015-05-27 15:21:01'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 0
+                ]
+                [yii\db\BaseActiveRecord:_oldAttributes] => [
+                    'msg_of_day_id' => 1
+                    'msg_details' => 'Each Day is a GIFT don\'t send it BACK unopened.  Have a nice Day !'
+                    'msg_user_type' => '0'
+                    'created_at' => '2015-05-27 15:21:01'
+                    'created_by' => 1
+                    'updated_at' => null
+                    'updated_by' => null
+                    'is_status' => 0
+                ]
+                [yii\db\BaseActiveRecord:_related] => []
+                [yii\base\Model:_errors] => null
+                [yii\base\Model:_validators] => null
+                [yii\base\Model:_scenario] => 'default'
+                [yii\base\Component:_events] => []
+                [yii\base\Component:_behaviors] => []
+            )
+        ]
+        [yii\data\BaseDataProvider:_totalCount] => 6
+        [yii\base\Component:_events] => []
+        [yii\base\Component:_behaviors] => null
+    )
+    '__id' => 2
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/edu/index.php?r=dashboard%2Fevents%2Findex'
+    'HTTP_COOKIE' => '_identity=8bf0ed270b2102989bb39a713e0058cede2cb23efc617ccce76c6f4fb7906818a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22ZSCoirpY4TOWl7gYu1yhP1S_ik2eiO_S%22%2C2592000%5D%22%3B%7D; PHPSESSID=9a47moqjll26s6mvrsqpaujhe7; _csrf=0332f8707468362a5e15f8c016421e7258590724d03160fa4ed49a3da7e58068a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22R9GWa0wZBYZoy63xaPtrOpLCqOYIjdu3%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.7 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.7 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/edu/index.php'
+    'REMOTE_PORT' => '58980'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=dashboard%2Fmsg-of-day'
+    'REQUEST_URI' => '/edu/index.php?r=dashboard%2Fmsg-of-day'
+    'SCRIPT_NAME' => '/edu/index.php'
+    'PHP_SELF' => '/edu/index.php'
+    'REQUEST_TIME_FLOAT' => 1443350604.902
+    'REQUEST_TIME' => 1443350604
+]

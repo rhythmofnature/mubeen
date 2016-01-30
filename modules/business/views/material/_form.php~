@@ -1,0 +1,35 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use app\modules\business\models\MaterialTypes;
+/* @var $this yii\web\View */
+/* @var $model app\modules\business\models\MaterialTypes */
+/* @var $form yii\widgets\ActiveForm */
+?>
+
+<div class="material-types-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'name')->textInput(['maxlength' => 250]) ?>
+
+    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+
+    <?= $form->field($model, 'measurement_type')->textInput() ?>
+  
+    <?= $form->field($model, 'measurement_type')
+        ->dropDownList(
+             MaterialTypes::$measurementType,
+            ['prompt'=>'Select Measurement Type','style'=>'width:300px']
+        );?>
+
+    <?= $form->field($model, 'status')->textInput(['maxlength' => 1]) ?>
+
+    <div class="form-group">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>

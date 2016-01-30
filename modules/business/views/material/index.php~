@@ -1,0 +1,51 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+use app\modules\business\models\MaterialTypes;
+/* @var $this yii\web\View */
+/* @var $searchModel app\modules\business\models\MaterialTypesSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Material Types';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="material-types-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <p>
+        <?= Html::a('Create Material Types', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            'name',
+            'description:ntext',
+ 
+            [
+			'label' => 'Measurement Type',
+			'attribute' => 'measurement_type',
+			'filter' => MaterialTypes::$measurementType,
+						'value' => function ($model,$key,$index){
+                return MaterialTypes::$measurementType[$model->measurement_type];			
+			    },
+ 	        ],
+ 	        [
+			'label' => 'Status',
+			'attribute' => 'status',
+			'filter' => MaterialTypes::$status,
+						'value' => function ($model,$key,$index){
+                return MaterialTypes::$status[$model->measurement_type];			
+			    },
+ 	        ],
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+</div>

@@ -1,0 +1,81 @@
+<?php
+
+namespace app\modules\business\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "bur_trips".
+ *
+ * @property integer $id
+ * @property string $date_of_travel
+ * @property integer $vehicle_id
+ * @property integer $driver_id
+ * @property integer $material_id
+ * @property string $size
+ * @property integer $measurement_type
+ * @property string $site_name
+ * @property string $site_place
+ * @property string $kilometre
+ * @property double $vehicle_rent
+ * @property string $driver_amount
+ * @property string $merchant_amount
+ * @property string $buyer_amount
+ * @property string $buyer_amount_total
+ * @property string $buyer_trip_sheet_number
+ * @property string $seller_trip_sheet_number
+ */
+class Trips extends \yii\db\ActiveRecord
+{
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'bur_trips';
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['date_of_travel','merchant','buyer', 'vehicle_id', 'driver_id', 'material_id', 'size', 'measurement_type', 'site_name', 'site_place', 'kilometre', 'vehicle_rent', 'driver_amount', 'merchant_amount', 'buyer_amount', 'buyer_amount_total', 'buyer_trip_sheet_number', 'seller_trip_sheet_number'], 'required'],
+            [['date_of_travel'], 'safe'],
+            [['vehicle_id', 'driver_id', 'material_id', 'measurement_type'], 'integer'],
+            [['vehicle_rent', 'driver_amount', 'merchant_amount', 'buyer_amount', 'buyer_amount_total'], 'number'],
+            [['size', 'kilometre'], 'string', 'max' => 100],
+            [['site_name', 'site_place'], 'string', 'max' => 250],
+            [['buyer_trip_sheet_number', 'seller_trip_sheet_number'], 'string', 'max' => 20]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'merchant'=>'Merchant',
+            'buyer'=>'Buyer',
+            'date_of_travel' => 'Date Of Travel',
+            'vehicle_id' => 'Vehicle ID',
+            'driver_id' => 'Driver ID',
+            'material_id' => 'Material ID',
+            'size' => 'Quantity',
+            'measurement_type' => 'Measurement Type',
+            'site_name' => 'Site Name',
+            'site_place' => 'Site Place',
+            'kilometre' => 'Kilometre',
+            'vehicle_rent' => 'Vehicle Rent',
+            'driver_amount' => 'Driver Amount',
+            'merchant_amount' => 'Merchant Amount',
+            'buyer_amount' => 'Buyer Amount',
+            'buyer_amount_total' => 'Buyer Amount Total',
+            'buyer_trip_sheet_number' => 'Buyer Trip Sheet Number',
+            'seller_trip_sheet_number' => 'Seller Trip Sheet Number',
+        ];
+    }
+}
