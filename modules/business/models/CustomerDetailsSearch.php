@@ -69,4 +69,45 @@ class CustomerDetailsSearch extends CustomerDetails
 
         return $dataProvider;
     }
+    
+    
+     public function searchAll($params)
+    {
+        $query = CustomerDetails::find();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+                    'name' => SORT_ASC,
+//                     'title' => SORT_ASC, 
+                ],
+            ],
+            'pagination' => [
+        'pageSize' => 200,
+    ],
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'customer_type' => $this->customer_type,
+        ]);
+		//$query->where(['<>', 'customer_type',3]);
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'place', $this->place])
+            ->andFilterWhere(['like', 'address', $this->address])
+            ->andFilterWhere(['like', 'account_details', $this->account_details])
+            ->andFilterWhere(['like', 'phone', $this->phone])
+            ->andFilterWhere(['like', 'status', $this->status]);
+
+        return $dataProvider;
+    }
 }

@@ -224,4 +224,32 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    
+    public function actionBackup()
+    {
+	  $dbhost = 'localhost';
+	  $dbuser = 'root';
+	  $dbpass = '123456';
+	  $dbname = 'mubeen';
+	  
+	  $backup_file = Yii::$app->basePath."/data/".$dbname.'.gz';  
+	  $return_var = NULL;
+	  $output = NULL;
+	  $command = "/usr/bin/mysqldump -u $dbuser -h $dbhost -p$dbpass $dbname | gzip > $backup_file";
+	  exec($command, $output, $return_var);	  
+	  //echo $return_var;	
+	  
+	  header("Pragma: public");
+	  header("Expires: 0");
+	  header("Cache-Control: must-revalidate, post-check=0, pre-check=0"); 
+	  header("Content-Type: application/force-download");
+	  header("Content-Type: application/octet-stream");
+	  header("Content-Type: application/download");
+	  header("Content-Disposition: attachment;filename=mubeen.gz");
+	  header("Content-Transfer-Encoding: binary ");	  
+      header('Connection: close');
+	  readfile($backup_file);		// push it out
+	  exit();	  
+	  
+    }
 }

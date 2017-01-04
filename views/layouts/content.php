@@ -22,7 +22,7 @@ use yii\helpers\Html;
         <div class="pull-right hidden-xs">
           <!--b>Version</b> 3.0 -->
         </div>
-        <strong>Copyright &copy; <?= date('Y') ?> <a href="http://www.rudrasoftech.com">Rudra Softech</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; <?= date('Y') ?> <a href="#">Buraq</a>.</strong> All rights reserved.
       </div>
     </footer>
 

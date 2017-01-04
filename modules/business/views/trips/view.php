@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\modules\business\models\MaterialTypes;
 
 /* @var $this yii\web\View */
 /* @var $model app\modules\business\models\Trips */
@@ -29,12 +30,36 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'date_of_travel',
-            'vehicle_id',
-            'driver_id',
-            'material_id',
+	
+			[
+			'label'=>'Date',
+			'attribute'=>"date_of_travel",
+			'value' => date("Y-m-d",strtotime($model->date_of_travel))
+			],
+
+			[
+			'label'=>'Vehicle',
+			'attribute'=>"vehicle_id",
+			'value' => $model->vehicles['name']
+			],
+			[
+			'label'=>'Driver',
+			'attribute'=>"driver_id",
+			'value' => $model->driver['name']
+			],
+			[
+			'label'=>'Matrial',
+			'attribute'=>"material_id",
+			'value' => $model->material['name']
+			],
+
             'size',
-            'measurement_type',
+			[
+			'label'=>'Measurement Type',
+			'attribute'=>"measurement_type",
+			'value' => MaterialTypes::$measurementType[$model->measurement_type]
+			],
+
             'site_name',
             'site_place',
             'kilometre',

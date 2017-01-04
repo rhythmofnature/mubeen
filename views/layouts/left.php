@@ -33,10 +33,10 @@ use yii\web\NotFoundHttpException;
         <?php if (!Yii::$app->user->isGuest) : ?>
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="<?= $Photo ?>" class="img-circle" alt="User Image"/>
+                   
                 </div>
                 <div class="pull-left info">
-                    <p> Welcome, <?= @Yii::$app->user->identity->user_login_id ?></p>
+                   <br><br>
                 </div>
             </div>
         <?php endif; ?>
@@ -44,37 +44,14 @@ use yii\web\NotFoundHttpException;
         <!-- sidebar-menu. -- Start -->
 
         <ul class="sidebar-menu">
-            <li>
+          <!--  <li>
                 <a href="<?= Yii::$app->homeUrl ?>" class="navbar-link">
                     <i class="fa fa-angle-down"></i> <span class="text-info">Menu</span>
                 </a>
-            </li>
+            </li>-->
 	<?php
 
-	    /*if($this->context->module->id == 'student')
-		 echo $this->render('menu/student');
-	    else if($this->context->module->id == 'employee') 
-	    	 echo $this->render('menu/employee');
-	    else if($this->context->module->id == 'course') 
-	    	 echo $this->render('menu/course');
-	    else if($this->context->module->id == 'fees') 
-	    	 echo $this->render('menu/fees');
-	    else if($this->context->module->id == 'admission') 
-	    	 echo $this->render('menu/admission');
-	    else if($this->context->module->id == 'report' || get_class($this->context) == 'app\controllers\LoginDetailsController') 
-	    	 echo $this->render('menu/report');
-	    else if ($this->context->module->id == 'dashboard')
-	         echo $this->render('menu/dashboard');
-	    else if ($this->context->action->id == 'resetstudloginid' || $this->context->action->id == 'resetstudpassword' || $this->context->action->id == 'updatestudloginid')
-		 echo $this->render('menu/student');
-	    else if ($this->context->action->id == 'resetemploginid' || $this->context->action->id == 'resetemppassword' || $this->context->action->id == 'updateemploginid')
-		 echo $this->render('menu/employee');
-	    else if ($this->context->action->id == 'error' || $this->context->action->id == 'change')
-		 echo $this->render('menu/Modules');
-	    else if ($this->context->module->id == 'rights' || $this->context->module->id == 'admin')
-	         echo $this->render('menu/rights');
-	    else
-		 echo $this->render('menu/config');*/
+	 
 
 	     echo $this->render('menu/business');
 	     ?>

@@ -22,8 +22,10 @@ class VehicleDetails extends \yii\db\ActiveRecord
      */
      public static $type = array(
         
-        "1"=>"Lorry",
-        "2"=>"Tipper"
+        "1"=>"Mazda Tipper",
+        "2"=>"Nissan Tipper",
+        "3"=>"Rental Vehicle",
+        "4"=>"Other"
     );
     public static $status = array(
         

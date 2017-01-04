@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-$this->title = 'EduSec | Login';
+$this->title = 'Business Management Tool | Login';
 ?>
 <div class="login-box">
       <div class="login-logo">

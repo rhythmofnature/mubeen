@@ -39,7 +39,11 @@ use app\modules\business\models\VehicleDetails;
    
    <div class="col-xs-12 col-lg-12 no-padding">
     <div class="col-xs-12 col-sm-6 col-lg-6">
-            <?= $form->field($model, 'customer_type')->textInput() ?>   
+         <?= $form->field($model, 'vehicle')
+      ->dropDownList(
+	  ArrayHelper::map(VehicleDetails::find()->where(['status'=>1])->all(), 'id', 'name'),
+	  ['prompt'=>'Select Vehicle','id'=>'vehicle']
+      );?> 
     </div>
 
     <div class="col-xs-12 col-sm-6 col-lg-6">
@@ -49,31 +53,20 @@ use app\modules\business\models\VehicleDetails;
    
    <div class="col-xs-12 col-lg-12 no-padding">
     <div class="col-xs-12 col-sm-6 col-lg-6">
-     <?= $form->field($model, 'vehicle')
-      ->dropDownList(
-	  ArrayHelper::map(VehicleDetails::find()->where(['status'=>1])->all(), 'id', 'name'),
-	  ['prompt'=>'Select Vehicle','id'=>'vehicle']
-      );?> 
+      <?= $form->field($model, 'earning_percentage')->textInput(['maxlength' => 4]) ?>
     </div>
 
     <div class="col-xs-12 col-sm-6 col-lg-6">
-    <?= $form->field($model, 'earning_percentage')->textInput(['maxlength' => 4]) ?>
+    	 <?= $form->field($model, 'status', ['template' => "{input}"])->hiddenInput(['value' => 1]); ?>
+    	 <?= $form->field($model, 'customer_type', ['template' => "{input}"])->hiddenInput(['value' => 3]); ?>
     </div>
    </div>
    
-   <div class="col-xs-12 col-lg-12 no-padding">
-    <div class="col-xs-12 col-sm-6 col-lg-6">
-     <?= $form->field($model, 'status')->textInput(['maxlength' => 1]) ?>
-    </div>
-
-    <div class="col-xs-12 col-sm-6 col-lg-6">
-    
-    </div>
-   </div> 
    
     <div class="form-group col-xs-12 col-sm-6 col-lg-4 no-padding">
 	<div class="col-xs-6">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord  ? 'btn btn-block btn-success' : 'btn btn-block btn-info']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord  ? 'btn btn-block btn-success' : 'btn 
+btn-block btn-info']) ?>
 	</div>
 	<div class="col-xs-6">
 	<?= Html::a('Cancel', ['index'], ['class' => 'btn btn-default btn-block']) ?>

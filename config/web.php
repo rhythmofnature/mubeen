@@ -41,7 +41,7 @@ $config = [
 		'urlManager' => [		
 	'class' => 'yii\web\UrlManager',
 		// Disable index.php
-	'showScriptName' => false,
+	'showScriptName' => true,
 		// Disable r= routes
 	'enablePrettyUrl' => true,
 	'rules' => array(
@@ -136,7 +136,7 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = 'yii\debug\Module';
 	
-	$config['components']['assetManager'] = [
+	$config['components']['assetManager'] = [ 
 		'linkAssets' => true,
 	];
 

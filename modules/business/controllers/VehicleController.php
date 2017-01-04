@@ -125,7 +125,7 @@ class VehicleController extends Controller
     $km = $_POST['km'];
     $vehicleDetails=$this->findModel($id);
 	$pricePerKm=$vehicleDetails->charge_per_km;
-	$total =$pricePerKm*$km;
+	return $total =$pricePerKm*$km;
 	
 
     }

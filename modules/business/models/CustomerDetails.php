@@ -1,7 +1,7 @@
 <?php
 
 namespace app\modules\business\models;
-
+use yii\helpers\Html;
 use Yii;
 
 /**
@@ -28,6 +28,7 @@ class CustomerDetails extends \yii\db\ActiveRecord
         "1"=>"Active",
         "0"=>"In Active"
     );
+    public $previous_balance;
     /**
      * @inheritdoc
      */
@@ -44,7 +45,7 @@ class CustomerDetails extends \yii\db\ActiveRecord
         return [
             [['name', 'place', 'address', 'account_details', 'customer_type', 'phone'], 'required'],
             [['address', 'account_details'], 'string'],
-            [['customer_type'], 'integer'],
+            [['customer_type','previous_balance'], 'integer'],
             [['name', 'place'], 'string', 'max' => 250],
             [['phone'], 'string', 'max' => 15],
             [['status'], 'string', 'max' => 1]
@@ -65,6 +66,54 @@ class CustomerDetails extends \yii\db\ActiveRecord
             'customer_type' => 'Customer Type',
             'phone' => 'Phone',
             'status' => 'Status',
+            'previous_balance'=>'Previous Balance'
         ];
     }
+    
+    public static function getUnpaidamount($id){
+            $command = Yii::$app->db->createCommand("SELECT sum(amount) 
+        FROM bur_balance_sheet where status='open' AND customer_id='$id'");
+        $sum = $command->queryScalar();
+        $sum =isset($sum)?$sum:0;
+
+        $balance=0;
+        $closed_bill=Transactions::find()->where(['status'=>'closed','customer_id'=>$id])->orderBy(['id'=> SORT_DESC])->one();
+        //$closed_bill=Transactions::findOne(['status'=>'closed','customer_id'=>$id]);
+            if(isset($closed_bill->balance)){ 
+                $balance = $closed_bill->balance;
+
+            }
+          
+          return $sum+$balance;
+    }
+    
+    
+    public static function getUncolsedBill($id){
+
+        $balance=0;
+        
+        $closed_bill=Transactions::findOne(['status'=>'open','customer_id'=>$id]);
+        return isset($closed_bill->ivoice_amount)?$closed_bill->ivoice_amount.'( Date: '.$closed_bill->created_on.' invoice 
+No:'.$closed_bill->id.')':'All 
+Invoice are closed';
+    }
+    
+    
+     public static function generateBill($id){
+
+        $balance=0;
+        
+        $closed_bill=Transactions::findOne(['status'=>'open','customer_id'=>$id]);
+        
+        if(isset($closed_bill->ivoice_amount)){
+             return Html::a('<i class="btn btn-block btn-primary">View And Close</i>',['/business/bills/view','id'=>$closed_bill->id]);
+        }else{
+            return Html::a('<i class="btn btn-block btn-primary">Generate 
+Invoice</i>',['/business/bills/generate','id'=>$id]);
+        }
+    }
+    
+
+    
+    
 }

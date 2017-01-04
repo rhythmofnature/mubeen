@@ -19,7 +19,8 @@ class MaterialTypes extends \yii\db\ActiveRecord
 	public static $measurementType = array(
         
         "1"=>"Feet",
-        "2"=>"Numbers"
+        "2"=>"NUmber",
+        "3"=>"Load"
     );
     public static $status = array(
         

@@ -33,9 +33,12 @@ use app\modules\business\models\CustomerDetails;
    
     <div class="col-xs-12 col-lg-12 no-padding">
     <div class="col-xs-12 col-sm-6 col-lg-6">
-    <?= $form->field($model, 'customer_type')
+    <?php
+    $types = CustomerDetails::$customerType;
+    unset($types[3]);
+    echo $form->field($model, 'customer_type')
         ->dropDownList(
-             CustomerDetails::$customerType,
+             $types,
             ['prompt'=>'Select status','style'=>'width:300px']
         );?>
     </div>
@@ -52,11 +55,23 @@ use app\modules\business\models\CustomerDetails;
             ['prompt'=>'Select status','style'=>'width:300px']
         );?>
     </div>
-    <div class="col-xs-12 col-sm-6 col-lg-6">
     
+    <div class="col-xs-12 col-sm-6 col-lg-6">
+    <?php
+    if($model->isNewRecord){ ?>
+    <?= $form->field($model, 'previous_balance')->textInput(['maxlength' => 15]) ?>
+    <?php } ?>
     </div>
    </div>     
-    
+     <div class="form-group col-xs-12 col-sm-6 col-lg-4 no-padding">
+	<div class="col-xs-6">
+        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord  ? 'btn btn-block btn-success' : 'btn 
+btn-block btn-info']) ?>
+	</div>
+	<div class="col-xs-6">
+	<?= Html::a('Cancel', ['index'], ['class' => 'btn btn-default btn-block']) ?>
+	</div>
+    </div>     
 
     <?php ActiveForm::end(); ?>
 </div>

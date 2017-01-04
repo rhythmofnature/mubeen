@@ -10,12 +10,13 @@ use yii\web\NotFoundHttpException;
 
 AppAsset::register($this);
 
-Yii::$app->name = "EduSec";
+Yii::$app->name = "Buraq";
 ?>
 
 <header class="header">
 
-<?= Html::a(Html::img(Yii::$app->request->baseUrl.'/images/edusec.png', ['width'=>'120px;', 'height'=>'22px']), Yii::$app->homeUrl, ['class' => 'logo']) ?>
+<?= Html::a(Html::img(Yii::$app->request->baseUrl.'/images/buraq.png', ['height'=>'90']), Yii::$app->homeUrl, ['class' => 
+'logo']) ?>
 
 <nav class="navbar navbar-static-top" role="navigation">
 
@@ -25,91 +26,10 @@ Yii::$app->name = "EduSec";
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
 </a>
-<?php
-$empInfo = app\modules\employee\models\EmpInfo::find()->where(["LIKE", "emp_joining_date", date('Y-m-d')])->count();
-$stuList = app\modules\student\models\StuMaster::find()->where(["LIKE", "created_at", date('Y-m-d')])->count();
-$events = app\modules\dashboard\models\Events::find()->where(["LIKE", "created_at", date('Y-m-d')])->count();
-$eventsList = app\modules\dashboard\models\Events::find()->where(["LIKE", "event_start_date", date('Y-m-d')])->all();
-$empList = Yii::$app->db->createCommand("SELECT * from emp_master WHERE DATE_FORMAT(created_at,'%y-%m-%d') between date_sub(NOW(),INTERVAL 1 WEEK) AND NOW() AND is_status = 0;")->queryAll();
-
-$countT = ((!Yii::$app->session->get('stu_id') && !Yii::$app->session->get('emp_id')) ? ($empInfo + $stuList + count($empList) + $events) : 0);
-$notifyCount = ($countT + count($eventsList));
-
-?>
 <div class="navbar-right">
 
 <ul class="nav navbar-nav">
-<?php if(!Yii::$app->session->get('stu_id')) : ?>
-<li class="dropdown module-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" title="Main Menu">
-		<i class="fa fa-th"></i>
-    </a>
-	<?= $this->render(
-		'module-name.php'
-	)
-	?>
-</li>
-<?php endif; ?>
-<!-- Notifications: style can be found in dropdown.less -->
-<li class="dropdown notifications-menu">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <i class="fa fa-bell-o"></i>
-        <span class="label label-warning"><?= ($notifyCount) ? $notifyCount : "0";?></span>
-    </a>
-    <ul class="dropdown-menu">
 
-        <li class="header">You have <?= ($notifyCount) ? $notifyCount : "No ";?> notifications</li>
-	<?php if($notifyCount != 0) : ?>
-        <li>
-            <!-- inner menu: contains the actual data -->
-            <ul class="menu">
-		<?php 
-		    if(!Yii::$app->session->get('stu_id') && !Yii::$app->session->get('emp_id')) :
-		      if(!empty($empList)) { ?>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-users info"></i><strong> <?= count($empList); ?> new employee(s) added in week </strong>
-                    </a>
-                </li>
-		<?php } ?>
-		<?php if(!empty($stuList)) { ?>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-user warning"></i><strong> <?= Html::encode($stuList); ?> new student(s) added today </strong>
-                    </a>
-                </li>
-		<?php } ?>
-		<?php if(!empty($empInfo)) { ?>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-users success"></i><strong> <?= Html::encode($empInfo); ?> new employee(s) joined today </strong>
-                    </a>
-                </li>
-		<?php } ?>
-		<?php if(!empty($events)) { ?>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-info success"></i><strong> <?= Html::encode($events); ?> event(s) created today </strong>
-                    </a>
-                </li>
-		<?php } 
-		     endif;
-		?>
-		<?php if(!empty($eventsList)) {
-			foreach($eventsList as $event) :
-		?>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-calendar warning"></i> <?= '<strong style="word-wrap: break-word; width:50px">Event : </strong>'.Html::encode(substr($event->event_title, 0, 10))."... &nbsp; <strong> Time : </strong><small class='label label-info'>".Html::encode(date('d-M H:i A', strtotime($event->event_start_date)))."</small>";?>
-                    </a>
-                </li>
-		<?php endforeach; } ?>
-            </ul>
-        </li>
-
-	<?php endif; ?>
-    </ul>
-</li>
 
 <?php
 if (Yii::$app->user->isGuest) {

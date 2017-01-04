@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=buraq',
+    'dsn' => 'mysql:host=localhost;dbname=mubeen',
     'username' => 'root',
-    'password' => 'redhat',
+    'password' => '123456',
     'charset' => 'utf8',
     'enableSchemaCache' => true,
 ];

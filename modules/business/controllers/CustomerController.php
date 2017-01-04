@@ -8,6 +8,9 @@ use app\modules\business\models\CustomerDetailsSearch;
 use app\modules\business\models\MaterialTypes;
 use app\modules\business\models\MaterialTypesSearch;
 use app\modules\business\models\CustomerMaterialPrice;
+use app\modules\business\models\Transactions;
+use app\modules\business\models\BalanceSheet;
+
 
 
 use yii\web\Controller;
@@ -47,6 +50,70 @@ class CustomerController extends Controller
         ]);
     }
 
+    
+     /**
+     * Lists all CustomerDetails models.
+     * @return mixed
+     */
+    public function actionAdvance()
+    {
+        $searchModel = new CustomerDetailsSearch();
+        $dataProvider = $searchModel->searchAll(Yii::$app->request->queryParams);
+
+        return $this->render('advance', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+    
+    public function actionCollectadvance(){
+        $balanceSheet = new BalanceSheet();
+         $trip_id =Yii::$app->params['tripId'];
+        if(Yii::$app->request->post()){
+            $date = $_POST['BalanceSheet']['created_on'];
+            $amount = $_POST['BalanceSheet']['amount'];
+            $customer_id = $_POST['BalanceSheet']['customer_id'];
+           
+           $balanceSheet->created_on=  date("Y-m-d",strtotime($date));
+           $balanceSheet->customer_id = $customer_id;
+           $balanceSheet->amount=$amount*-1;
+           $balanceSheet->status='open';
+           $balanceSheet->trip_id=$trip_id;
+           $balanceSheet->to_or_from="to";
+           $balanceSheet->save();
+           $balanceSheet = new BalanceSheet();
+//            print_r($balanceSheet->getErrors());
+            
+        }
+
+        $query = BalanceSheet::find();
+
+            $dataProvider = new ActiveDataProvider([
+                'query' => $query,
+                'sort' => [
+                    'defaultOrder' => [
+                        'created_on' => SORT_DESC,
+                    //                     'title' => SORT_ASC, 
+                    ],
+                ],
+                'pagination' => [
+                    'pageSize' => 200,
+                ],
+            ]);
+            $query->andFilterWhere([
+            'trip_id' => $trip_id,
+            ]);
+            $dataProvider;
+        
+        return $this->render('collectadvance', [
+            //'model' => $this->findModel($id),
+            'balanceSheet'=>$balanceSheet,
+            'dataProvider'=>$dataProvider,
+            'seacrcModel'=>$balanceSheet
+        ]);
+    
+    }
+    
     /**
      * Displays a single CustomerDetails model.
      * @param integer $id
@@ -70,6 +137,22 @@ class CustomerController extends Controller
         $model = new CustomerDetails();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if($model->previous_balance >0){
+                $obj_trans = new Transactions();
+                $obj_trans->customer_id =$model->id;
+                $obj_trans->balance=$model->previous_balance;
+                $obj_trans->ivoice_amount=0;
+                $obj_trans->created_on=date("Y-m-d");
+                $obj_trans->from_sheet_id=0;
+                $obj_trans->to_sheet_id=0;
+                $obj_trans->status='closed';
+                if($obj_trans->save()){
+//                 echo "sueee";exit;
+                }
+                
+                
+                
+            }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -184,6 +267,19 @@ class CustomerController extends Controller
 	  echo $total_price = $price*$quantity;
     
     }
+    
+    /**
+     * Deletes an existing CustomerDetails model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionAdvanceDelete($id)
+    {
+        BalanceSheet::findOne($id)->delete();
+
+        return $this->redirect(['collectadvance']);
+    }    
 
 
 }
